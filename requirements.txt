@@ -1,6 +1,9 @@
-fastapi
+docker
 uvicorn
 sqlalchemy
+bcrypt==4.0.1
 python-dotenv
+python-multipart
 passlib[bcrypt]
+fastapi[standard]
 python-jose[cryptography]

@@ -1,6 +1,6 @@
-# fastapi-web-deployments
+# fastapi-cloud-library
 
-FastAPI web deployment projects showcasing Python backend APIs, database integration, authentication, and production-ready deployment workflows.
+A FastAPI-based cloud library backend with JWT authentication, SQLite database integration, Docker deployment, Swagger API documentation, and future machine learning capabilities. 
 
 ## DEPLOYMENT TUTORIALS
 
@@ -22,7 +22,7 @@ cd .\fastapi-cloud-library\
 
 ```bash
 sudo apt install python3.10-venv #install virt env dependency
-python3 -m venv .venv #create an virtual env named "venv"
+python3 -m venv .venv #create an virtual env named ".venv"
 source .venv/bin/activate #enable the env
 python3 -m pip install --upgrade pip #make sure the package installer is up-to-date
 pip install -r requirements.txt #install required dependencies for this repo
@@ -42,16 +42,21 @@ SECRET_KEY="replace_this_with_the_secret_key"
 ```
 - For the initial setup, use the commands above to generate a secret key, which will be used for JWT and OAuth2 authentication. Without it, Docker will throw an error while building the image. 
 
-### METHOD 1: DEPLOYMENT USING DOCKER
+### STEP 4: DEPLOY USING DOCKER
 
 ```bash
-# Step 1: Build the Docker image
+#1. Build the Docker image
 docker build --no-cache -t fastapi-cloud-library . # also required for adjusting the container file 
-# Step 2: Start the Docker image
-docker run -d --name fastapi-cloud-library --env-file .env -p 8000:8000 fastapi-cloud-library
-# Step 3: Execute the example_books.py file inside the container
+#2. Start the Docker image
+docker run -d --name fastapi-cloud-library --rm --env-file .env -p 8000:8000 fastapi-cloud-library
+#3. Execute the example_books.py file inside the container
 docker exec -it fastapi-cloud-library python example_books.py
+#4. Open the web browser and enter:
+http://127.0.0.1:8000/docs#/
+#5. Stop the container when done
+docker stop fastapi-cloud-library
 ```
+
 
 
 
