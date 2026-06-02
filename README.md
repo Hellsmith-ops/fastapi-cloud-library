@@ -29,12 +29,13 @@ fastapi-cloud-library/
 └── requirements.txt
 
 ## API ROUTES
-Health Check
+
+### Health Check
 GET /health
-Authentication
+### Authentication
 POST /auth/
 POST /auth/token
-Books
+### Books
 GET    /books
 GET    /books/{book_id}
 POST   /books
@@ -86,6 +87,7 @@ docker exec -it fastapi-cloud-library python example_books.py
 #4. Open Swagger UI in a browser:
 http://127.0.0.1:8000/docs
 http://<server-ip>:8000/docs # if running on a remote server
+![FastAPI UI](FastAPI_UI.png)
 #5. Stop the container when finished:
 docker stop fastapi-cloud-library
 ```
@@ -94,8 +96,12 @@ docker stop fastapi-cloud-library
 After opening Swagger UI, test the API using the following workflow:
 
 1. Run GET /health to confirm the API is running.
+![API Health Checks](Healthcheck.png)
+
 2. Run GET /books to view the seeded example books.
+![Read_All_Endpoint](Read_All_Endpoint.png)
 3. Click Authorize near the top right of Swagger UI.
+![LoginUI](LoginUI.png)
 4. Log in with the demo account:
 ```bash
 username: demo_user
@@ -105,6 +111,7 @@ After authorization, test the protected book routes:
 - POST /books
 - PUT /books/{book_id}
 - DELETE /books/{book_id}
+![Delete_Endpoint](Delete_Endpoint.png)
 
 The GET routes are public, while create, update, and delete routes require JWT authorization.
 
