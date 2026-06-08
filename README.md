@@ -13,6 +13,7 @@ A FastAPI-based cloud library backend with JWT authentication, SQLite database i
 - Swagger UI for interactive API testing
 
 ## PROJECT STRUCTURE
+```text
 fastapi-cloud-library/
 ├── database/
 │   ├── __init__.py
@@ -27,6 +28,7 @@ fastapi-cloud-library/
 ├── example_books.py
 ├── main.py
 └── requirements.txt
+```
 
 ## API ROUTES
 
