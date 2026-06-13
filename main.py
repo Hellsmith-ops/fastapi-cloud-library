@@ -8,6 +8,11 @@ from fastapi import FastAPI
 # initialize fastapi
 app = FastAPI()
 
+#health checkpoint
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 #  create databases based on models imported, if not existed
 database_models.Base.metadata.create_all(bind=engine) # bind to engine
 
