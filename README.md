@@ -1,4 +1,6 @@
 ![CI](https://github.com/Hellsmith-ops/fastapi-cloud-library/actions/workflows/ci.yml/badge.svg)
+- GitHub Actions runs linting and automated FastAPI tests on every push and pull request.
+
 # fastapi-cloud-library
 
 A FastAPI-based cloud library backend with JWT authentication, SQLite database integration, Docker deployment, Swagger API documentation, and future machine learning capabilities. 
@@ -30,6 +32,18 @@ fastapi-cloud-library/
 ├── main.py
 └── requirements.txt
 ```
+
+## CI/CD
+
+This project includes a GitHub Actions workflow that runs on every push and pull request to the `main` branch.
+
+The workflow performs:
+
+- Python dependency installation
+- Ruff linting
+- FastAPI health endpoint testing with Pytest
+
+This demonstrates a basic CI pipeline for validating backend API changes before merge.
 
 ## API ROUTES
 
