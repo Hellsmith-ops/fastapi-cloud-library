@@ -1,9 +1,9 @@
 # main functions for essential services
 
-import database_models  # import database models
-from database_engine import engine
-from routers import auth, books
 from fastapi import FastAPI
+from database import database_models
+from database.database_engine import engine
+from routers import auth, books
 
 # initialize fastapi
 app = FastAPI()
