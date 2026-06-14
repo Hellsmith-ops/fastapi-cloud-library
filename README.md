@@ -1,3 +1,4 @@
+![CI](https://github.com/Hellsmith-ops/fastapi-cloud-library/actions/workflows/ci.yml/badge.svg)
 # fastapi-cloud-library
 
 A FastAPI-based cloud library backend with JWT authentication, SQLite database integration, Docker deployment, Swagger API documentation, and future machine learning capabilities. 
